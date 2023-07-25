@@ -6,15 +6,10 @@
 #include <unistd.h>
 #include "menu.h"
 
-Menu menu;
-
 void server(char* argv[]);
 
 // gcc -o server server.o menu.o
 int main(int argc, char* argv[]){
-
-	initMenu(&menu);
-	printMenu(&menu);
 
 	server(argv);
 
@@ -62,19 +57,18 @@ void server(char* argv[]){
 		if(clientSocket == -1){
 			errorHandling("Accept error");
 		}
-
-		char data[100];
-		sprintf(data,"%d",menu.hambergerIdx);
-		if(write(clientSocket, data, strlen(data)+1)==-1){
-			errorHandling("Send error");
-		}
+		// char data[100];
+		// sprintf(data,"%d",menu.hambergerIdx);
+		// if(write(clientSocket, data, strlen(data)+1)==-1){
+		// 	errorHandling("Send error");
+		// }
 	
-		int i;
-		for(i=0;i<menu.hambergerIdx;i++){
-			if(send(clientSocket,(struct Node*)&(menu.hamberger[i]), sizeof(menu.hamberger[i]),0)==-1){
-				errorHandling("Send error");
-			}	
-		}
+		// int i;
+		// for(i=0;i<menu.hambergerIdx;i++){
+		// 	if(send(clientSocket,(struct Node*)&(menu.hamberger[i]), sizeof(menu.hamberger[i]),0)==-1){
+		// 		errorHandling("Send error");
+		// 	}	
+		// }
 		close(clientSocket);
 	}
 	close(serverSocket);

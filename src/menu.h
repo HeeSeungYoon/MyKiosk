@@ -1,24 +1,12 @@
-#include <stdio.h>
-typedef struct Node{
-	char name[50];
-	char price[10];
-}Node;
+#ifndef MENU_H_
+#define MENU_H_
 
-typedef struct Menu{
-	Node hamberger[20];
-	Node side[20];
-	Node drink[20];
-	int hambergerIdx;
-	int sideIdx;
-	int drinkIdx;
-} Menu;
+extern char* category_name[7];
+extern char* menu_name[7][18];
+extern int menu_price[7][18];
+extern int menu_num[7];
+extern char* menu_size[4];
 
-void initMenu(Menu* menu);
-void printMenu(Menu* menu);
-void addHamberger(Menu* menu, char* hamberger,int price);
-void addSide(Menu* menu, char* side, int price);
-void addDrink(Menu* menu, char* drink,int price);
-void deleteHamberger(Menu* menu, char* hamberger);
-void deleteSide(Menu* menu, char* side);
-void deleteDrink(Menu* menu, char* drink);
+void print_menu();
 
+#endif

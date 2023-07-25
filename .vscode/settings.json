@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "clnt_init.h": "c",
+        "order.h": "c"
+    }
+}

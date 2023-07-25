@@ -8,7 +8,7 @@ OBJ_DIR=../obj
 
 LDFLAGS=-lncursesw
 
-OBJS_CLNT=init.o client.o client1.o menu.o
+OBJS_CLNT=clnt_init.o order.o client1.o menu.o payment.o
 OBJS_SERV=server.o menu.o
 OBJECTS_CLNT=$(patsubst %.o,$(OBJ_DIR)/%.o,$(OBJS_CLNT))
 OBJECTS_SERV=$(patsubst %.o,$(OBJ_DIR)/%.o,$(OBJS_SERV))
@@ -27,7 +27,7 @@ client1 : $(OBJECTS_CLNT)
 		$(CC) $(CFLAGS) $(OBJECTS_CLNT) -o client1 $(LDFLAGS)
 
 server : $(OBJECTS_SERV)
-		$(CC) $(CFLAGS) $(OBJECTS_SERV) -o server
+		$(CC) $(CFLAGS) $(OBJECTS_SERV) -o server $(LDFLAGS)
 
 .PHONY: clean all
 clean:	
