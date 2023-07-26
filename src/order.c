@@ -312,7 +312,7 @@ void print_order_complete(int idx, int EXIT){
 void print_cart(char** order_name, int* order_size, int* order_num, int cnt){
     int i;
     for(i=0;i<cnt;i++){
-        move(LINES-4+(i/10),COLS/10*(i%10));
+        move(LINES-4+(i/5),COLS/5*(i%5));
         printw("%s(%s)x%d",order_name[i], menu_size[order_size[i]], order_num[i]);
     }
 }

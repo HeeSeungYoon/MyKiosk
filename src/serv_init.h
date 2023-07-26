@@ -1,10 +1,15 @@
 #ifndef SERV_INIT_H_
 #define SERV_INIT_H_
 
-// 카테고리별 매출과 일별 매출을 저장하기 위한 배열
-int category_sales[7];
-int sales[12][31];
+extern int category_sales[7];
 
 void init();
+void init_sales_and_cart();
+void print_order();
+void revenue(int month, int day);
+void print_revenue(int month, int day);
+void initUI(int month, int day);
+void errorHandling(char* msg);
+void server(char* argv[]);
 
 #endif

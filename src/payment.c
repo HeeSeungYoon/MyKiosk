@@ -164,7 +164,7 @@ void print_bill(char** order_name, int* order_price, int* order_num, int* order_
         }else if(key == ENTER && payment_idx==1){
             print_payment_complete();
             clear();
-            break;
+            return;
         }
     }
 }

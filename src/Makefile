@@ -8,8 +8,8 @@ OBJ_DIR=../obj
 
 LDFLAGS=-lncursesw
 
-OBJS_CLNT=clnt_init.o order.o client1.o menu.o payment.o
-OBJS_SERV=server.o menu.o
+OBJS_CLNT=clnt_init.o order.o client1.o menu.o payment.o client.o
+OBJS_SERV=server.o menu.o serv_init.o
 OBJECTS_CLNT=$(patsubst %.o,$(OBJ_DIR)/%.o,$(OBJS_CLNT))
 OBJECTS_SERV=$(patsubst %.o,$(OBJ_DIR)/%.o,$(OBJS_SERV))
 

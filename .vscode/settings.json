@@ -3,6 +3,7 @@
         "stdio.h": "c",
         "stdlib.h": "c",
         "clnt_init.h": "c",
-        "order.h": "c"
+        "order.h": "c",
+        "inet.h": "c"
     }
 }

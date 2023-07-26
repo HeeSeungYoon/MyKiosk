@@ -3,10 +3,7 @@
 #include "clnt_init.h"
 #include "order.h"
 #include "payment.h"
-//#include "client.h"
-
-// sudo apt-get install libncurses5-dev libncursesw5-dev 
-// gcc -o client client.o init.o -lncursesw
+#include "client.h"
 
 int main(int argc, char* argv[]){
 
@@ -32,6 +29,7 @@ int main(int argc, char* argv[]){
 		else{
 			sprintf(today, "%d-%d-%d %d:%d:%d",tm.tm_year+1900, tm.tm_mon+1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
 			print_bill(order_name, order_price, order_num, order_size, order_cnt,today);
+			client(argv, order_name, order_price, order_num, order_cnt, today);
 		}
 	}
 	return 0;
