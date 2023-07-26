@@ -6,6 +6,7 @@
 #define ENTER 10
 #define ESC 27
 
+char* membership[3] = {"Welcome", "Green", "Gold"};
 double grade_discount[3] = {0, 0.05, 0.1};
 
 int discount(int* total_price, double discount_grade){
@@ -50,10 +51,11 @@ void print_order(char** order_name, int* order_price, int* order_num, int* order
     }else if(isDiscount==1){
         int discount_price = 0;
         discount_price = discount(total_price, grade_discount[grade]);
-        mvprintw(10+2*cnt, COLS/3, "할인된 금액 :");
-        mvprintw(10+2*cnt, COLS/3+COLS/6-10, "%d원",discount_price);
-        mvprintw(10+2*cnt, COLS/3+COLS/6, "총 금액 :");
-        mvprintw(10+2*cnt, COLS/3*2-10, "%d원",*total_price-discount_price);
+        mvprintw(10+2*cnt, COLS/3, "멤버쉽 등급 : %s", membership[grade]);
+        mvprintw(11+2*cnt, COLS/3, "할인된 금액 :");
+        mvprintw(11+2*cnt, COLS/3+COLS/6-10, "%d원",discount_price);
+        mvprintw(11+2*cnt, COLS/3+COLS/6, "총 금액 :");
+        mvprintw(11+2*cnt, COLS/3*2-10, "%d원",*total_price-discount_price);
     }
 }
 
@@ -80,14 +82,19 @@ void print_payment(int idx, int isDiscount){
 
 void print_payment_complete(){
     
-    move(LINES/2-3, COLS/2-15);
-    hline('-',30);
-    move(LINES/2-3, COLS/2-15);
-    vline('|',6);
-    move(LINES/2-3, COLS/2+15);
-    vline('|',6);
-    move(LINES/2+3, COLS/2-15);
-    hline('-',30);
+    mvprintw(LINES/2-3, COLS/2-15, "┌");
+    move(LINES/2-3, COLS/2-14);
+    hline('-',29);
+    mvprintw(LINES/2-3, COLS/2+15, "┐");
+    move(LINES/2-2, COLS/2+15);
+    vline('|',5);
+    mvprintw(LINES/2+3, COLS/2+15, "┘");
+    move(LINES/2+3, COLS/2-14);
+    hline('-',29);
+    mvprintw(LINES/2+3, COLS/2-15, "└");
+    move(LINES/2-2, COLS/2-15);
+    vline('|',5);
+    
     mvprintw(LINES/2, COLS/2-11, "계산이 완료되었습니다.");
     refresh();
 
