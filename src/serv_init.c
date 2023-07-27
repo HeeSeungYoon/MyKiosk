@@ -85,6 +85,7 @@ void revenue(int month, int day){
 }
 
 void print_revenue(int month, int day){
+    revenue(month, day);
     clear();
     mvprintw(2, COLS/2-9, "카테고리별 일 매출");
     move(4, COLS/3);
@@ -104,6 +105,7 @@ void print_revenue(int month, int day){
     refresh();
 
     if(getch()==ENTER){
+        clear();
         return;
     }
 }
@@ -119,7 +121,6 @@ void initUI(int month, int day){
 
     int key = getch();
     if(key == ENTER){
-        revenue(month, day);
         print_revenue(month, day);
         init_sales_and_cart();
         return;
@@ -166,7 +167,6 @@ void server(char* argv[]){
     int month = tm.tm_mon+1;
     int day = tm.tm_mday;
     while(1){
-        clear();
         print_order();
         move(LINES-4,0);
         hline('=',COLS);
@@ -184,14 +184,12 @@ void server(char* argv[]){
         if(read(client_socket, today, 100)==-1){
             errorHandling("Recv error");
         }
-        printf("%s\n", today);
 
         // 장바구니 index 수신    
         if(read(client_socket, &order_cnt, sizeof(order_cnt))==-1){
             errorHandling("Recv error");
         }
         order_cnt = ntohl(order_cnt);
-        printf("%d\n",order_cnt);
 
         // 구매 가격 수신
         int i;
