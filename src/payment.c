@@ -119,7 +119,7 @@ void print_bill(char** order_name, int* order_price, int* order_num, int* order_
     
     while(1){
         //clear();
-        mvprintw(2, COLS/2-2-strlen(today)/2, "구매 내역 %s",today);
+        mvprintw(2, COLS/2-2-strlen(today)/2, "주문 내역 %s",today);
         move(4,COLS/3);
         hline('=',COLS/3);
         print_order(order_name, order_price, order_num, order_size, cnt, &total_price, isDiscount, grade);
