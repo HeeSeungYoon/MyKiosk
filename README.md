@@ -22,8 +22,8 @@ C로 만든 TOY 프로젝트
 ```bash
 $ make clean 
 $ make all
-$ ./server 포트번호
-$ ./client ip주소 포트번호
+$ ./server <포트번호>
+$ ./client <ip주소> <포트번호>
 ```
 
 ## 4. 핵심 기능
