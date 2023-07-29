@@ -15,9 +15,9 @@ C로 만든 TOY 프로젝트
     ```
     sudo apt-get install libncurses5-dev libncursesw5-dev 
     ```
+---        
 
-개발 환경
-+ Ubuntu 22.04.2 LTS (Window 11 WSL2)
++ 실행 환경 : Ubuntu 22.04.2 LTS (Window 11 WSL2)
 + IDE : Visual Studio Code
 
 ## 3. 프로그램 실행 방법
