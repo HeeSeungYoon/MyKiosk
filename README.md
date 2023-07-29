@@ -93,7 +93,7 @@ int order_size[100]; // 사용자가 선택한 메뉴의 사이즈
 
 ### 4.3. Server
 
-4.3.1 주문 히스토리 [serv_init.c](./src/server_init.c)
+4.3.1 주문 히스토리 [serv_init.c](./src/serv_init.c)
 
 <details>
 <summary> 사용자가 계산 완료한 주문 내역을 출력한다.</summary>
@@ -103,7 +103,7 @@ int order_size[100]; // 사용자가 선택한 메뉴의 사이즈
 </details>
 
 ---
-4.3.2 카테고리 매출 확인 및 일 매출 정산  [serv_init.c](./src/server_init.c)
+4.3.2 카테고리 매출 확인 및 일 매출 정산  [serv_init.c](./src/serv_init.c)
 <details>
 <summary> 사용자들이 구매했던 메뉴들을 카테고리 별로 매출과 하루 매출을 정산하여 보여준다.</summary>
 
