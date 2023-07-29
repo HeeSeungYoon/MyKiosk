@@ -10,7 +10,7 @@ C로 만든 TOY 프로젝트
 
 ## 2. 기술 스택 및 개발 환경
 
-+ Ubuntu 22.04.2 LTS
++ Ubuntu 22.04.2 LTS (Window 11 WSL2)
 + IDE : Visual Studio Code
 + C (컴파일러 gcc 11.3.0)
 + NCURSES 
