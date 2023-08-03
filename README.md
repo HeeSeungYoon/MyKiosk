@@ -1,14 +1,16 @@
 # My STARBUCKS Kiosk
 C로 만든 TOY 프로젝트 
 
+## 1. 프로젝트 목적
++ 최근 많은 음식점에서 도입하고 있는 키오스크 시스템을 직접 구현해봄으로써 서버와 클라이언트 구조를 이해하기 위함.  
 
-## 1. 개발 기간 및 참여 인원
+## 2. 개발 기간 및 참여 인원
 
 + 2023.07.21. ~ 2023.07.27.
 
 + 개인 프로젝트
 
-## 2. 기술 스택 및 개발 환경
+## 3. 기술 스택 및 개발 환경
 
 + C (컴파일러 gcc 11.3.0)
 + NCURSES 
@@ -20,7 +22,7 @@ C로 만든 TOY 프로젝트
 + 실행 환경 : Ubuntu 22.04.2 LTS (Window 11 WSL2)
 + IDE : Visual Studio Code
 
-## 3. 프로그램 실행 방법
+## 4. 프로그램 실행 방법
 
 ```bash
 $ make clean 
@@ -29,14 +31,14 @@ $ ./server <포트번호>
 $ ./client <ip주소> <포트번호>
 ```
 
-## 4. 핵심 기능
+## 5. 핵심 기능
 
-### 4.1. OVERVIEW
+### 5.1. OVERVIEW
 ![OVERVIEW](./images/overview.png "기능 요약")
 
-### 4.2. Client
+### 5.2. Client
 
-4.2.1. 메뉴 출력 [menu.c](./src/menu.c)
+5.2.1. 메뉴 출력 [menu.c](./src/menu.c)
 <details> 
 <summary> Kiosk 화면에 전체 메뉴를 출력한다. </summary>
 
@@ -45,7 +47,7 @@ $ ./client <ip주소> <포트번호>
 </details>
 
 ---
-4.2.2 메뉴 선택 [order.c](./src/order.c)
+5.2.2 메뉴 선택 [order.c](./src/order.c)
 <details> 
 <summary> 사용자가 Kiosk에서 카테고리, 메뉴, 사이즈와 개수를 선택한다. 사용자가 선택한 메뉴와 사이즈, 개수를 화면 아래에 출력하여 보여준다.</summary>
 
@@ -64,7 +66,7 @@ int order_size[100]; // 사용자가 선택한 메뉴의 사이즈
 </details>
 
 ---
-4.2.3 주문 내역 출력 [payment.c](./src/payment.c)
+5.2.3 주문 내역 출력 [payment.c](./src/payment.c)
 
 <details> 
 <summary> 주문 내역을 출력하여 보여준다. 사용자는 멤버쉽 할인을 적용할지 말지를 선택할 수 있다.</summary>
@@ -74,7 +76,7 @@ int order_size[100]; // 사용자가 선택한 메뉴의 사이즈
 </details>
 
 ---
- 4.2.4 멤버쉽 할인 [payment.c](./src/payment.c)
+ 5.2.4 멤버쉽 할인 [payment.c](./src/payment.c)
 
 <details>
 <summary> 멤버쉽 등급을 선택할 수 있고 등급에 따른 할인 내역이 다르다.
@@ -94,9 +96,9 @@ int order_size[100]; // 사용자가 선택한 메뉴의 사이즈
 
 ---
 
-### 4.3. Server
+### 5.3. Server
 
-4.3.1 주문 히스토리 [serv_init.c](./src/serv_init.c)
+5.3.1 주문 히스토리 [serv_init.c](./src/serv_init.c)
 
 <details>
 <summary> 사용자가 계산 완료한 주문 내역을 출력한다.</summary>
@@ -106,7 +108,7 @@ int order_size[100]; // 사용자가 선택한 메뉴의 사이즈
 </details>
 
 ---
-4.3.2 카테고리 매출 확인 및 일 매출 정산  [serv_init.c](./src/serv_init.c)
+5.3.2 카테고리 매출 확인 및 일 매출 정산  [serv_init.c](./src/serv_init.c)
 <details>
 <summary> 사용자들이 구매했던 메뉴들을 카테고리 별로 매출과 하루 매출을 정산하여 보여준다.</summary>
 
@@ -119,7 +121,7 @@ static int sales[12][31]; // 일 매출 저장 [month][day]
 
 </details>
 
-## 5. 오류 및 개선 사항
+## 6. 오류 및 개선 사항
 
 * 클라이언트 실행 시 여러 메뉴를 선택하여 장바구니에 담고 계산을 하려고 하면 가끔씩 "세그멘테이션 오류"가 발생
 
