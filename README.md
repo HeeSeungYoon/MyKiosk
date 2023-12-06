@@ -39,17 +39,15 @@ $ ./client <ip주소> <포트번호>
 ### 5.2. Client
 
 5.2.1. 메뉴 출력 [menu.c](./src/menu.c)
-<details> 
-<summary> Kiosk 화면에 전체 메뉴를 출력한다. </summary>
+
+Kiosk 화면에 전체 메뉴를 출력한다.
 
 ![init screen](./images/client.png "초기 화면")
 
-</details>
-
 ---
 5.2.2 메뉴 선택 [order.c](./src/order.c)
-<details> 
-<summary> 사용자가 Kiosk에서 카테고리, 메뉴, 사이즈와 개수를 선택한다. 사용자가 선택한 메뉴와 사이즈, 개수를 화면 아래에 출력하여 보여준다.</summary>
+
+사용자가 Kiosk에서 카테고리, 메뉴, 사이즈와 개수를 선택한다. 사용자가 선택한 메뉴와 사이즈, 개수를 화면 아래에 출력하여 보여준다.
 
 
 ![menu](./images/menu_select.gif "메뉴 선택")
@@ -63,34 +61,23 @@ int order_num[100]; // 사용자가 선택한 메뉴의 개수
 int order_size[100]; // 사용자가 선택한 메뉴의 사이즈
 ```
 
-</details>
-
 ---
 5.2.3 주문 내역 출력 [payment.c](./src/payment.c)
-
-<details> 
-<summary> 주문 내역을 출력하여 보여준다. 사용자는 멤버쉽 할인을 적용할지 말지를 선택할 수 있다.</summary>
+ 
+주문 내역을 출력하여 보여준다. 사용자는 멤버쉽 할인을 적용할지 말지를 선택할 수 있다.
 
 ![bill](./images/order.png "주문 내역")
-
-</details>
 
 ---
  5.2.4 멤버쉽 할인 [payment.c](./src/payment.c)
 
-<details>
-<summary> 멤버쉽 등급을 선택할 수 있고 등급에 따른 할인 내역이 다르다.
-</summary>
+멤버쉽 등급을 선택할 수 있고 등급에 따른 할인 내역이 다르다.
 
 ![membership](./images/membership.png "멤버쉽 등급")
-</details>
 
-<details>
-<summary> 할인된 금액과 할인이 적용된 총 금액을 다시 출력하여 보여준다.</summary>
+할인된 금액과 할인이 적용된 총 금액을 다시 출력하여 보여준다.
 
 ![discount](./images/discount.png "할인")
-
-</details>
 
 사용자가 계산을 완료할 때마다 서버로 주문 내역을 전송한다.
 
@@ -100,17 +87,14 @@ int order_size[100]; // 사용자가 선택한 메뉴의 사이즈
 
 5.3.1 주문 히스토리 [serv_init.c](./src/serv_init.c)
 
-<details>
-<summary> 사용자가 계산 완료한 주문 내역을 출력한다.</summary>
+사용자가 계산 완료한 주문 내역을 출력한다.
 
 ![server init](./images/server.png "서버 초기 화면")
 
-</details>
-
 ---
 5.3.2 카테고리 매출 확인 및 일 매출 정산  [serv_init.c](./src/serv_init.c)
-<details>
-<summary> 사용자들이 구매했던 메뉴들을 카테고리 별로 매출과 하루 매출을 정산하여 보여준다.</summary>
+
+사용자들이 구매했던 메뉴들을 카테고리 별로 매출과 하루 매출을 정산하여 보여준다.
 
 ![revenue](./images/revenue.png "매출 정산")
 
@@ -118,8 +102,6 @@ int order_size[100]; // 사용자가 선택한 메뉴의 사이즈
 int category_sales[7]; // 카테고리별 매출을 저장
 static int sales[12][31]; // 일 매출 저장 [month][day]
 ```
-
-</details>
 
 ## 6. 오류 및 개선 사항
 
